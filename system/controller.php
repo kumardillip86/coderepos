@@ -3,7 +3,7 @@ class Controller {
 	var $allow = array();
 	var $deny = array();
 	public function checkSession($action){
-		if(isset($_SESSION['id']) && isset($_SESSION['status'])){
+		if(isset($_SESSION['ud_id']) && isset($_SESSION['ud_status'])){
 			//action in the deny array
 			//redirect to welcome page
 			if(in_array($action, $this->deny)){
@@ -382,9 +382,16 @@ class Controller {
 				/*Generate random number*/
 	//////////////////////////////////////////////////////////////////////
 	
-	public function generateRandom() {
-	   $rand = rand(10000, 99999);
-		return  $rand;
+	public function generateRandom($length = 32) {
+	   //$rand = rand(10000, 99999);
+	   // Generate random 32 charecter string
+		$string = md5(microtime());
+		// Position Limiting
+		$highest_startpoint = 32-$length;
+		// Take a random starting point in the randomly
+		// Generated String, not going any higher then $highest_startpoint
+		$randomString = substr($string,rand(0,$highest_startpoint),$length);
+		return $randomString;
 	}
 	//////////////////////////////////////////////////////////////////////
 				/*Sending mail*/

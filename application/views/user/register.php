@@ -3,25 +3,25 @@
  function validate(){
     validator=$("#formid").validate({
         rules: {
-			"user[fname]": {
+			"user[ud_fname]": {
 				required:true
 			},
-			"user[lname]": {
+			"user[ud_lname]": {
 				required:true
 			},
-			"user[email_id]": {
+			"user[ud_email_id]": {
 				required:true,
 				email:true
 			}
 	    },
 	    messages: {
-			"user[fname]":{
+			"user[ud_fname]":{
 				required:"<br>This field is required"
 			},
-			"user[lname]":{
+			"user[ud_lname]":{
 				required:"<br>This field is required"
 			},
-			"user[email_id]": {
+			"user[ud_email_id]": {
 				required:"<br>This field is required",
 				email:"<br>Please enter an valid email address."
 			}
@@ -57,20 +57,20 @@ function showEmailExist() {
 	<tr><td colspan="2" bgcolor="#000099" style="color:#FFFFFF"><b>Register</b></td></tr>
 	<tr>
 		<td align="right" valign="top">First Name:</td>
-		<td><input type="text" name="user[fname]" id="uname" /></td>
+		<td><input type="text" name="user[ud_fname]" id="uname" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top">Middle Name:</td>
-		<td><input type="text" name="user[mname]" id="mname" /></td>
+		<td><input type="text" name="user[ud_mname_initial]" id="mname" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top">Last Name:</td>
-		<td><input type="text" name="user[lname]" id="lname" /></td>
+		<td><input type="text" name="user[ud_lname]" id="lname" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top">Email ID:</td>
 		<td>
-			<input type="text" name="user[email_id]" id="email_id"   onblur="return showEmailExist();" />
+			<input type="text" name="user[ud_email_id]" id="email_id"   onblur="return showEmailExist();" />
 			<label id="ajaxel" class="error" for="email_id" generated="true" style="display: none;"><br>
 				This field is required
 			</label>

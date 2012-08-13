@@ -13,12 +13,17 @@ font:verdana 12px;}
 </head>
 <body>
 	<center><h1>Header</h1></center>
-	<?php if(isset($_SESSION['id']) && isset($_SESSION['status'])){ ?>
+	<?php if(isset($_SESSION['ud_id']) && isset($_SESSION['ud_status'])){ ?>
 		<div>
 			<div style="float:left">
-				Welcome <?php echo $_SESSION['fname']; ?>
+				Welcome <?php echo $_SESSION['ud_fname']; ?>
 			</div>
 			<div style="float:right">
+			<?php if($_SESSION['ud_type'] == 1){?>
+				<a href="<?php echo HTTP_ROOT; ?>organization">Organization</a>&nbsp;||&nbsp;
+				<a href="<?php echo HTTP_ROOT; ?>organization/pcontactdetail">Primary Contact</a>&nbsp;||&nbsp;
+				<a href="<?php echo HTTP_ROOT; ?>user/userlisting">Users</a>&nbsp;||&nbsp;
+			<?php } ?>
 				<a href="<?php echo HTTP_ROOT; ?>user/changepwd">Change Password</a>&nbsp;||&nbsp;
 				<a href="<?php echo HTTP_ROOT; ?>user/logout">Logout</a>
 			</div>

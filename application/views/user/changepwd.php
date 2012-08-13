@@ -33,7 +33,7 @@
 <?php if(isset($el) && $el){?>
 <input type="hidden" name="elid" id="hid" value="<?php echo $el; ?>" />
 <?php }else{ ?>
-<input type="hidden" name="hid" id="hid" value="<?php echo $_SESSION['id']; ?>" />
+<input type="hidden" name="hid" id="hid" value="<?php echo $_SESSION['ud_id']; ?>" />
 <?php }?>
 <?php //print_r($_SESSION); ?>
 <table cellpadding="4px" cellspacing="4px" align='center' style="border:2px solid #000099">
